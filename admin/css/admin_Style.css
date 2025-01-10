@@ -1,0 +1,686 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+
+/*==============================
+  WEBSITE PRESET
+==============================*/
+/* ROOT VARIABLE: this is to define reusable css variables for colors  */
+:root {
+  /* pink themed color */
+  --pink-100: #FEE3EC; /* lightest pink */
+  --pink-200: #F9C5D5; /* light pink */
+  --pink-300: #F999B7; /* medium pink */
+  --pink-400: #F2789F; /* dark pink */
+  --pink-500: #E35985; /* darkest pink */
+
+  /* font color & backdrop shadow: black */
+  --black: #070504;
+  --black-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* font color: white */
+  --aliceblue: #f0f8ff; 
+}
+
+/* GLOBAL RESET: apply consistent styles across all elements */
+* {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+
+
+/*==============================
+  HTML STYLING
+==============================*/
+html {
+  font-size: 62.5%; /* base font size = 10px | 1rem = 10px | 1.6rem = 16px | this is just for easier calculation hehe */
+  overflow-x: hidden; /* prevent horizontal scrolling */
+  
+  /* default background color if no img url provided */
+  background-color: var(--pink-100);
+}
+
+
+
+/*==============================
+  SIDENAV STYLING
+==============================*/
+.sidenav {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 23rem;
+  background-color: var(--pink-500);
+  position: fixed;
+  padding: 1rem 1rem;
+  z-index: 999;
+}
+
+/* sidenav link styling */
+.sidenav a, .dropdown-btn, .dashboard-link {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--aliceblue);
+  background: none;
+  display: block;
+  cursor: pointer;
+}
+
+/* sidenav link (hover) styling */
+.dropdown-btn:hover, .dashboard-link:hover {
+  color: black;
+  transition: .25s linear;
+}
+
+/* sidenav link (active) dropdown button */
+.active {
+  color: var(--black);
+}
+
+/* dropdown link (hidden until dropdown-btn clicked) styling */
+.dropdown-container {
+  display: none;
+  padding-left: 0.8rem;
+}
+
+/* dropdown link (hover) styling */
+.dropdown-container a:hover {
+  background-color: transparent; /* no background when hovering */
+  color: black;
+  transition: .25s linear;
+}
+
+.logout-icon:hover{
+  color: black; 
+}
+
+
+/*==============================
+  ADMIN DASHBOARD STYLING
+==============================*/
+.admin-dashboard {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+/* dashboard-container styling */
+.admin-dashboard .dashboard-container {  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* align content to the top */
+  align-items: center; /* centers content vertically */
+  margin-top: 1rem;
+  margin-bottom: 10rem;
+  margin-left: 23rem;
+  width: 84.5%;
+  height: 72rem;
+}
+
+/* admin welcome message styling */
+#admin-welcomeMessage {
+  font-size: 3rem;
+  padding-left: 1rem;
+  color: var(--black);
+  text-shadow: var(--black-shadow);
+}
+
+
+/*==============================
+  ADMIN USER LIST STYLING
+==============================*/
+.admin-userListContainer {
+  width: 90%;
+  text-align: center;
+}
+
+#user-table {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#user-table table, th, td {
+  border: 1px solid;
+}
+
+#user-table th {
+  background-color: var(--pink-300);
+}
+
+#list-row-count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  text-align: start;
+  margin: 1rem;
+}
+
+
+
+/*==============================
+  ADMIN USER FORM STYLING
+==============================*/
+.admin-userForm {
+  width: 50%;
+  height: 80%;
+  background-color: var(--pink-300);
+  padding-left: 5rem;
+  padding-top: 5rem;
+  border: 2px solid rgba(249, 153, 183, 0.5);
+  border-radius: 20px;
+  box-shadow: var(--black-shadow)
+}
+
+/* user form content styling */
+.admin-userForm label, input, textarea {
+  font-size: 2.5rem;
+  width: 90%;
+}
+
+/* user form content styling */
+.admin-userForm label {
+  font-weight: bold;
+}
+
+/* user form button styling */
+.admin-userForm button {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  background-color: var(--pink-500);
+  color: var(--aliceblue);
+  border-radius: 5rem;
+  margin-top: 1rem;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+}
+
+/* user form button (hover) styling */
+.admin-userForm button:hover {
+  opacity: 0.75;
+}
+
+/* user form button (active) styling */
+.admin-userForm button:active {
+  opacity: 0.55;
+}
+
+/* success message styling */
+#userSuccessMessage {
+  color: green;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* go-to-page link styling */
+#viewUserList, #adminDashboardLink {
+  color: blue;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 1rem 2rem 1rem 0rem;
+  display: inline-block;
+}
+
+/* go-to-page link (hover) styling */
+#viewUserList:hover, #adminDashboardLink:hover {
+  text-decoration: underline;
+  color: darkblue;
+}
+
+
+/*==============================
+  ADMIN CATEGORY FORM STYLING
+==============================*/
+/* category form container styling */
+.admin-categoryForm {
+  width: 50%;
+  height: 40%;
+  background-color: var(--pink-300);
+  padding-left: 5rem;
+  padding-top: 5rem;
+  border: 2px solid rgba(249, 153, 183, 0.5);
+  border-radius: 20px;
+  box-shadow: var(--black-shadow)
+}
+
+/* category form content styling */
+.admin-categoryForm label, input, textarea {
+  font-size: 2.5rem;
+  width: 90%;
+}
+
+/* category form content styling */
+.admin-categoryForm label {
+  font-weight: bold;
+}
+
+/* category form button styling */
+.admin-categoryForm button {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  background-color: var(--pink-500);
+  color: var(--aliceblue);
+  border-radius: 5rem;
+  margin-top: 1rem;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+}
+
+/* category form button (hover) styling */
+.admin-categoryForm button:hover {
+  opacity: 0.75;
+}
+
+/* category form button (active) styling */
+.admin-categoryForm button:active {
+  opacity: 0.55;
+}
+
+/* success message styling */
+#categorySuccessMessage {
+  color: green;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* go-to-page link styling */
+#createCategoryLink, #viewCategoryList, #adminDashboardLink {
+  color: blue;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 1rem 2rem 1rem 0rem;
+  display: inline-block;
+}
+
+/* go-to-page link (hover) styling */
+#createCategoryLink:hover, #viewCategoryList:hover, #adminDashboardLink:hover {
+  text-decoration: underline;
+  color: darkblue;
+}
+
+
+
+/*==============================
+  ADMIN CATEGORY LIST STYLING
+==============================*/
+.admin-categoryListContainer {
+  width: 90%;
+  text-align: center;
+}
+
+#category-table {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#category-table table, th, td {
+  border: 1px solid;
+}
+
+#category-table th {
+  background-color: var(--pink-300);
+}
+
+#list-row-count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  text-align: start;
+  margin: 1rem;
+}
+
+
+
+/*==============================
+  ADMIN PRODUCT FORM STYLING
+==============================*/
+/* form title styling */
+#admin-formTitle {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 5rem;
+  margin-bottom: 1rem;
+}
+
+/* product form container styling*/
+.admin-productForm {
+  width: 50%;
+  height: 80%;
+  background-color: var(--pink-300);
+  padding-left: 5rem;
+  padding-top: 5rem;
+  border: 2px solid rgba(249, 153, 183, 0.5);
+  border-radius: 20px;
+  box-shadow: var(--black-shadow);
+}
+
+/* product form content styling */
+.admin-productForm label, input, select {
+  font-size: 2.5rem;
+  width: 90%;
+}
+
+/* product form content styling */
+.admin-productForm label {
+  font-weight: bold;
+}
+
+/* product form button styling */
+.admin-productForm button {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  background-color: var(--pink-500);
+  color: var(--aliceblue);
+  border-radius: 5rem;
+  margin-top: 1rem;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+}
+
+/* product form button (hover) styling */
+.admin-productForm button:hover {
+  opacity: 0.75;
+}
+
+/* product form button (active) styling */
+.admin-productForm button:active {
+  opacity: 0.55;
+}
+
+/* success message styling */
+#productSuccessMessage {
+  color: green;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* go-to-page link styling */
+#createProductLink, #viewProductList, #adminDashboardLink {
+  color: blue;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 1rem 2rem 1rem 0rem;
+  display: inline-block;
+}
+
+/* go-to-page link (hover) styling */
+#createProductLink:hover, #viewProductList:hover, #adminDashboardLink:hover {
+  text-decoration: underline;
+  color: darkblue;
+}
+
+
+
+/*==============================
+  ADMIN PRODUCT LIST STYLING
+==============================*/
+.admin-productListContainer {
+  width: 90%;
+  text-align: center;
+}
+
+#product-table {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#product-table table, th, td {
+  border: 1px solid;
+}
+
+#product-table th {
+  background-color: var(--pink-300);
+}
+
+#list-row-count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  text-align: start;
+  margin: 1rem;
+}
+
+
+/*==============================
+  ADMIN BLOG FORM STYLING
+==============================*/
+/* blog title styling */
+#admin-formTitle {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 5rem;
+  margin-bottom: 1rem;
+}
+
+/* blog form container styling*/
+.admin-blogForm {
+  width: 50%;
+  height: 100%;
+  background-color: var(--pink-300);
+  padding-left: 5rem;
+  padding-top: 5rem;
+  border: 2px solid rgba(249, 153, 183, 0.5);
+  border-radius: 20px;
+  box-shadow: var(--black-shadow)
+}
+
+/* blog form content styling */
+.admin-blogForm label, input, select {
+  font-size: 1.8rem;
+  width: 90%;
+}
+
+/* blog form content styling */
+.admin-blogForm label {
+  font-weight: bold;
+}
+
+/* blog form button styling */
+.admin-blogForm button {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  background-color: var(--pink-500);
+  color: var(--aliceblue);
+  border-radius: 5rem;
+  margin-top: 1rem;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+}
+
+/* blog form button (hover) styling */
+.admin-blogForm button:hover {
+  opacity: 0.75;
+}
+
+/* blog form button (active) styling */
+.admin-blogForm button:active {
+  opacity: 0.55;
+}
+
+/* success message styling */
+#blogSuccessMessage {
+  color: green;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* go-to-page link styling */
+#createblogLink, #viewblogList, #adminDashboardLink {
+  color: blue;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 1rem 2rem 1rem 0rem;
+  display: inline-block;
+}
+
+/* go-to-page link (hover) styling */
+#createblogLink:hover, #viewblogList:hover, #adminDashboardLink:hover {
+  text-decoration: underline;
+  color: darkblue;
+}
+
+
+
+/*==============================
+  ADMIN BLOG LIST STYLING
+==============================*/
+.admin-blogListContainer {
+  width: 90%;
+  text-align: center;
+}
+
+#blog-table {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#blog-table table, th, td {
+  border: 1px solid;
+}
+
+#blog-table th {
+  background-color: var(--pink-300);
+}
+
+#list-row-count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  text-align: start;
+  margin: 1rem;
+}
+
+
+
+/*==============================
+  ADMIN REVIEW LIST STYLING
+==============================*/
+admin-reviewListContainer {
+  width: 90%;
+  text-align: center;
+}
+
+#review-table {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#review-table table, th, td {
+  border: 1px solid;
+}
+
+#review-table th {
+  background-color: var(--pink-300);
+}
+
+.review-search select, .review-search button {
+  padding: 0.5rem;
+  border: none;
+  background-color: var(--pink-500);
+  color: var(--aliceblue);
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 0.7rem;
+}
+
+.review-search button:hover {
+  background-color: var(--pink-400);
+}
+
+.review-search button:active {
+  opacity: 70%;
+}
+
+
+/*==============================
+  MEDIA QUERIES
+==============================*/
+@media (max-width: 991px) {
+  .sidenav {
+    width: 10rem;
+    padding: 0.5rem;
+  }
+  
+  /* sidenav link styling */
+  .sidenav a, .dropdown-btn, .dashboard-link {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+  }
+
+  /* shrink the dashboard container for smaller screen */
+  .admin-dashboard .dashboard-container {
+    max-width: 80%;
+    margin-left: 15rem;
+  }
+
+  /* adjust the form containers for smaller screen */
+  .admin-categoryForm, .admin-productForm, .admin-blogForm {
+    width: 100%;
+  }
+  
+  /* adjust the font size for smaller screens */
+  .admin-categoryForm label, input, textarea,
+  .admin-productForm label, input, select,
+  .admin-blogForm label, input, select {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width:795px) {
+  .sidenav {
+    width: 7rem;
+    padding: 0;
+  }
+  
+  /* sidenav link styling */
+  .sidenav a, .dropdown-btn, .dashboard-link {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+  }
+
+
+  /* shrink the dashboard container for very small screen */
+  .admin-dashboard .dashboard-container {
+    max-width: 80%;
+    margin-left: 8rem;
+  }
+
+  /* adjust the form containers for very small screen */
+  .admin-categoryForm, .admin-productForm, .admin-blogForm {
+    width: 70%;
+    padding-left: 2rem;
+    padding-top: 2rem;
+  }
+
+  /* adjust the font size for very small screens */
+  .admin-categoryForm label, input, textarea,
+  .admin-productForm label, input, select,
+  .admin-blogForm label, input, select {
+    font-size: 1.8rem;  
+  }
+}
